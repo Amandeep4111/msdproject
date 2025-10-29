@@ -1,0 +1,86 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f3fff3;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.home {
+  text-align: center;
+  margin-top: 50px;
+  padding: 30px;
+}
+
+.home img {
+  border-radius: 16px;
+  margin-top: 20px;
+  width: 60%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.plant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.auth-page {
+  width: 100%;
+  max-width: 400px;
+  margin: 80px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.auth-page h2 {
+  color: #2e8b57;
+  margin-bottom: 20px;
+}
+
+.auth-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-page input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+}
+
+.auth-page button {
+  background-color: #2e8b57;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.auth-page button:hover {
+  background-color: #276c46;
+}
+.admin-panel {
+  text-align: center;
+  margin-top: 60px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}

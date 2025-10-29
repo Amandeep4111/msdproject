@@ -1,0 +1,34 @@
+.add-plant-container {
+  width: 90%;
+  max-width: 500px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.add-form input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.add-form button {
+  padding: 8px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-form button:hover {
+  background-color: #45a049;
+}
