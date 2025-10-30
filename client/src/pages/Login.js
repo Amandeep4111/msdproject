@@ -11,14 +11,17 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      // Use your deployed backend API
       const res = await axios.post("https://msdproject.onrender.com/api/users/login", {
         email,
         password,
       });
+
+      // Save token and redirect
       localStorage.setItem("token", res.data.token);
       navigate("/dashboard");
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
+      setError(err.response?.data?.message || "Login failed. Please try again.");
     }
   };
 
@@ -26,6 +29,7 @@ function Login() {
     <div className="auth-container">
       <h2>Login</h2>
       {error && <div className="error">{error}</div>}
+
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -34,6 +38,7 @@ function Login() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+
         <input
           type="password"
           placeholder="Password"
@@ -41,8 +46,23 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+
         <button type="submit">Login</button>
       </form>
+
+      <p style={{ marginTop: "10px" }}>
+        Don’t have an account?{" "}
+        <a
+          href="/register"
+          style={{
+            color: "#007bff",
+            textDecoration: "underline",
+            cursor: "pointer",
+          }}
+        >
+          Register here
+        </a>
+      </p>
     </div>
   );
 }
