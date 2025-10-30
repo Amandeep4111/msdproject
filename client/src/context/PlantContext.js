@@ -12,7 +12,7 @@ export const PlantProvider = ({ children }) => {
   useEffect(() => {
     const fetchPlants = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/plants");
+        const res = await axios.get("https://msdproject.onrender.com/api/plants");
         setPlants(res.data);
       } catch (err) {
         console.error(err);
