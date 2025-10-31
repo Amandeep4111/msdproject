@@ -23,12 +23,23 @@ app.use(cookieParser());
 app.use(morgan(process.env.NODE_ENV === "production" ? "combined" : "dev"));
 
 // ===== Rate Limiting =====
+// ===== Rate Limiting (Safe for Render) =====
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100,
+  max: 100, // limit each IP to 100 requests per window
+  standardHeaders: true, // return rate limit info in headers
+  legacyHeaders: false, // disable X-RateLimit-* headers
   message: { message: "Too many requests, please try again later." },
+  handler: (req, res, next, options) => {
+    console.warn(`Rate limit triggered for IP: ${req.ip}`);
+    res.status(options.statusCode).json(options.message);
+  },
+  skipFailedRequests: true, // don't count failed requests
+  skipSuccessfulRequests: false, // count successful ones
 });
-app.use("/api/", limiter);
+
+app.use("/api", limiter);
+
 
 // ===== Body Parser =====
 app.use(express.json({ limit: "50mb" }));
