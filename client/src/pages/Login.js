@@ -53,7 +53,7 @@ function Login() {
       <p style={{ marginTop: "10px" }}>
         Don’t have an account?{" "}
         <a
-          href="/register"
+          href="/Register"
           style={{
             color: "#007bff",
             textDecoration: "underline",
