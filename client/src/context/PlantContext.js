@@ -24,7 +24,7 @@ export const PlantProvider = ({ children }) => {
   // Delete plant function
   const deletePlant = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/plants/${id}`, {
+      await axios.delete(`https://msdproject.onrender.com/api/plants/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Remove from shared state
