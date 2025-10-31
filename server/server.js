@@ -15,7 +15,7 @@ dotenv.config();
 
 // Initialize app
 const app = express();
-
+app.set("trust proxy", 1); // Trust first proxy
 // ===== Middleware Setup =====
 app.use(helmet());
 app.use(compression());
