@@ -12,7 +12,7 @@ export const PlantProvider = ({ children }) => {
   useEffect(() => {
     const fetchPlants = async () => {
       try {
-        const res = await axios.get("https://msdproject.onrender.com/api/plants");
+        const res = await axios.get("https://msd-95vk.onrender.com/api/plants");
         setPlants(res.data);
       } catch (err) {
         console.error(err);
@@ -24,7 +24,7 @@ export const PlantProvider = ({ children }) => {
   // Delete plant function
   const deletePlant = async (id) => {
     try {
-      await axios.delete(`https://msdproject.onrender.com/api/plants/${id}`, {
+      await axios.delete(`https://msd-95vk.onrender.com/api/plants/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Remove from shared state

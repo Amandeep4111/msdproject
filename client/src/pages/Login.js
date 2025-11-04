@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
     try {
       // Use your deployed backend API
-      const res = await axios.post("https://msdproject.onrender.com/api/users/login", {
+      const res = await axios.post("https://msd-95vk.onrender.com/api/users/login", {
         email,
         password,
       });

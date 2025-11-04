@@ -11,7 +11,7 @@ function Dashboard() {
   useEffect(() => {
     const fetchUserPlants = async () => {
       try {
-        const res = await axios.get("https://msdproject.onrender.com/api/plants/user", {
+        const res = await axios.get("https://msd-95vk.onrender.com/api/plants/user", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUserPlants(res.data);

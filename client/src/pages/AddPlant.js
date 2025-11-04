@@ -23,7 +23,7 @@ function AddPlant() {
 
     try {
       const res = await axios.post(
-        "https://msdproject.onrender.com/api/plants",
+        "https://msd-95vk.onrender.com/api/plants",
         { name, description, image, category: "Flower" },
         { headers: { Authorization: `Bearer ${token}` } }
       );
