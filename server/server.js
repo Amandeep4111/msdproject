@@ -47,7 +47,7 @@ app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // ===== CORS Configuration =====
 const allowedOrigin =
-  process.env.FRONTEND_ORIGIN || "https://msdproject-client.onrender.com";
+  process.env.FRONTEND_ORIGIN || "https://client-cmq7.onrender.com";
 
 app.use(
   cors({
